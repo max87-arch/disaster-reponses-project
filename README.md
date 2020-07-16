@@ -42,3 +42,6 @@ An important aspect is how preprocessing the message texts. We unite two feature
 * The second feature identifies the most relevant topics using the LDA algorithm.
 
 To optimize all configurable parameters, we use a Grid Search.
+
+## License
+This code is release under [MIT License](LICENSE).
