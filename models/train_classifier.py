@@ -81,7 +81,8 @@ def build_model(search_best_params=True):
         ('combined_feature', FeatureUnion([
             ('std_analysis', Pipeline([
                 ('tfidf', TfidfTransformer()),
-                ('lsa', TruncatedSVD(random_state=42))
+                ('lsa', (search_best_params if TruncatedSVD(random_state=42) else TruncatedSVD(random_state=42,
+                                                                                               n_components=100)))
             ])),
             ('lda_analysis', Pipeline([
                 ('lda', LatentDirichletAllocation(n_jobs=-1, random_state=42)),
