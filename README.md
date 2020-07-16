@@ -12,10 +12,10 @@ The project has three steps:
 
 Before proceeding with installation, the software requires the following dependencies:
 ```bash
-pip3 install scikit-learn==0.22 imbalanced-learn==0.6 scikit-optimize pandas plotly SQLAlchemy Flask nltk joblib
+pip3 install scikit-learn==0.22 imbalanced-learn==0.6 scikit-optimize pandas plotly SQLAlchemy Flask nltk joblib lightgbm
 ```
 
-The original dataset can be download from (Appen Site)[https://appen.com/datasets/combined-disaster-response-data/].
+The original dataset can be download from [Appen Site](https://appen.com/datasets/combined-disaster-response-data/).
 Please consider that this code runs on the old version of the dataset. This version doesn't include it to avoid license problem.
 
 ### Instructions:
