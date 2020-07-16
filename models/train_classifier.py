@@ -4,10 +4,10 @@ import joblib
 import nltk
 import pandas as pd
 import sqlalchemy as sql
-from imblearn.ensemble import BalancedRandomForestClassifier
 from imblearn.over_sampling import ADASYN
 from imblearn.pipeline import Pipeline as PipelineImb
 from lightgbm.sklearn import LGBMClassifier
+from misc.utils import tokenize
 from nltk.corpus import stopwords
 from sklearn.decomposition import LatentDirichletAllocation, TruncatedSVD
 from sklearn.ensemble import RandomForestClassifier, StackingClassifier, VotingClassifier
@@ -44,20 +44,6 @@ def load_data(database_filepath):
             'other_weather', 'death']]
 
     return X, y, y.columns.tolist()
-
-
-def tokenize(text):
-    """
-    This function tokenizes the input text, it removes all stopwords and it lemmatizes the words.
-    :param text: a string of text
-    :return: a list of words
-    """
-    word_list = nltk.word_tokenize(text.lower())
-    only_words_list = [word for word in word_list if word.isalnum()]
-    new_words = [nltk.WordNetLemmatizer().lemmatize(word) for word in only_words_list if
-                 word not in stopwords.words('english')]
-
-    return new_words
 
 
 def build_model(search_best_params=True):

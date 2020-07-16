@@ -4,7 +4,6 @@ import plotly
 from flask import Flask
 from flask import render_template, request, jsonify
 from graphs.plot import plot_genre_bar, plot_categories_bar, plot_categories_polar
-from misc.utils import tokenize
 from predicts.categories import predict_categories
 
 app = Flask(__name__)
