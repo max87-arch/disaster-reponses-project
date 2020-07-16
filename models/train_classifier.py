@@ -61,7 +61,7 @@ def tokenize(text):
     return new_words
 
 
-def build_model(search_best_params=False):
+def build_model(search_best_params=True):
     """
     This function initializes the model used to classify the targets.
     The dataset is imbalanced. Thus function combines two strategies to handle the dataset.
