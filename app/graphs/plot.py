@@ -3,6 +3,10 @@ from plotly.graph_objs import Bar, Scatter, Scatterpolar
 
 
 def plot_genre_bar():
+    """
+    This function returns a Bar plot that describes Genre data
+    :return: Object json for graphs
+    """
     # extract data needed for visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
@@ -29,6 +33,10 @@ def plot_genre_bar():
 
 
 def plot_categories_bar():
+    """
+    This function returns a Scatter plot that describes categories
+    :return: Object json for graphs
+    """
     # extract data needed for visuals
     categories_df = df.select_dtypes(['boolean']).drop(
         columns=['related', 'aid_related', 'weather_related', 'direct_report'])
@@ -60,6 +68,10 @@ def plot_categories_bar():
 
 
 def plot_categories_polar():
+    """
+    This function returns a Scatter Polar plot that describes categories
+    :return: Object json for graphs
+    """
     # extract data needed for visuals
     categories_df = df.select_dtypes(['boolean']).drop(
         columns=['related', 'aid_related', 'weather_related', 'direct_report'])
