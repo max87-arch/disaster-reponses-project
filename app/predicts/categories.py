@@ -1,6 +1,7 @@
 from data import disasters as df
 from predicts import disaster_model as model
 
+
 def predict_categories(query):
     """
     This function classifies the text in input
