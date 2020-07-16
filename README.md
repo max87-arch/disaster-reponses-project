@@ -12,13 +12,13 @@ The project has three steps:
 
 Before proceeding with installation, the software requires the following dependencies:
 ```bash
-pip3 install scikit-learn==0.22 imbalanced-learn==0.6 scikit-optimize pandas plotly SQLAlchemy Flask nltk joblib lightgbm
+pip3 install scikit-learn==0.22 imbalanced-learn==0.6 scikit-optimize pandas plotly SQLAlchemy Flask nltk joblib lightgbm sqllite
 ```
 
 The original dataset can be download from [Appen Site](https://appen.com/datasets/combined-disaster-response-data/).
 Please consider that this code runs on the old version of the dataset. This version doesn't include it to avoid license problem.
 
-### Instructions:
+### Instructions (Manual installation):
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -30,6 +30,14 @@ Please consider that this code runs on the old version of the dataset. This vers
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
+### Instructions (via Docker):
+Before proceeding with installation, please put the original dataset in data folder.
+In project's root directory:
+
+1. Run `compose-docker up`
+
+2. o to http://localhost:3001/
 
 ## Some considerations on project
 We can observe that the dataset is imbalanced. To manage the dataset, we combine two strategies:

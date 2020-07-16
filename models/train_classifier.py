@@ -4,7 +4,6 @@ import joblib
 import nltk
 import pandas as pd
 import sqlalchemy as sql
-import xgboost as xgb
 from imblearn.ensemble import BalancedRandomForestClassifier
 from imblearn.over_sampling import ADASYN
 from imblearn.pipeline import Pipeline as PipelineImb
@@ -149,14 +148,18 @@ def save_model(model, model_filepath):
 
 
 def main():
-    if len(sys.argv) == 3:
-        database_filepath, model_filepath = sys.argv[1:]
+    if len(sys.argv) >= 3:
+        database_filepath, model_filepath = sys.argv[1], sys.argv[2]
+        if len(sys.argv) > 3:
+            skip = True
+        else:
+            skip = False
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
         X, Y, category_names = load_data(database_filepath)
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
         print('Building model...')
-        model = build_model()
+        model = build_model(not skip)
 
         print('Training model...')
         model.fit(X_train, Y_train)
