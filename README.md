@@ -8,6 +8,8 @@ The project has three steps:
 * ML pipeline:  it's to build the predictive model
 * FLASK Web App: it's to make available the result to everyone.
 
+You can see a demo here [https://disaster-response-proj.herokuapp.com/](https://disaster-response-proj.herokuapp.com/)
+
 ## Getting start
 
 Before proceeding with installation, the software requires the following dependencies:
